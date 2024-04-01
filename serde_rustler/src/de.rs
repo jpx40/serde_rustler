@@ -59,7 +59,7 @@ impl<'de, 'a: 'de> de::Deserializer<'de> for Deserializer<'a> {
                     visitor.visit_string(string)
                 }
             }
-            // i8, i16, i32, i64, u8, u16, u32, u64, f32, f64 (i128, u128)
+            // i8, i16, i32, i64, u8, u16, u32, u64 (i128, u128)
             TermType::Integer => {
                 try_parse_number!(self.term, u64, visitor, visit_u64);
                 try_parse_number!(self.term, i64, visitor, visit_i64);
